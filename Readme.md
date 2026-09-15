@@ -47,7 +47,6 @@ to venues.
 | `02_team_name_cleaning.sql` | Builds the team name mapping table and `matches_clean` view |
 | `03_analysis_queries.sql` | All 14 analysis queries, in three tiers of difficulty |
 
-## How to Run
 
 ## How to Run
 
