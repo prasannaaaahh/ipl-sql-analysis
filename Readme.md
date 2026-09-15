@@ -57,6 +57,11 @@ to venues.
    - Server: `SET GLOBAL local_infile = 1;`
    - Client: connect with `--local-infile=1` (e.g. `mysql --local-infile=1 -u root -p`)
 5. Run the scripts in order:
+```
+   source 01_setup_and_load.sql
+   source 02_team_name_cleaning.sql
+   source 03_analysis_queries.sql
+```
 
 
 ## Analysis Questions
@@ -96,4 +101,5 @@ to venues.
 
 ## Tools
 
-MySQL 8 / MySQL Workbench
+- MySQL 8 / MySQL Workbench
+- Python (pandas) / Jupyter Notebook - used for initial data cleaning in `00_data_cleaning.ipynb`
