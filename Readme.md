@@ -11,12 +11,12 @@ progressing from basic aggregation to CTEs and window functions.
 ## Dataset Explanation
 
 Two raw tables sourced from a public IPL dataset (Kaggle):
-- **matches** — one row per match (teams, venue, toss, result, player of the match, etc.)
-- **deliveries** — one row per ball bowled (batter, bowler, runs, wicket info, etc.)
+- **matches** - one row per match (teams, venue, toss, result, player of the match, etc.)
+- **deliveries** - one row per ball bowled (batter, bowler, runs, wicket info, etc.)
 
 ## Data Cleaning
 
-The raw data had inconsistent team names — several IPL franchises were rebranded
+The raw data had inconsistent team names. Several IPL franchises were rebranded
 over the years (e.g. **Delhi Daredevils → Delhi Capitals**, **Kings XI Punjab →
 Punjab Kings**), so the same real-world team appears under multiple string values.
 Left un-cleaned, this silently splits one team's stats across several rows and,
@@ -36,7 +36,7 @@ checks were silently missing.
 
 **Known limitation:** Venue names have similar minor duplicates (e.g. "Wankhede
 Stadium" vs "Wankhede Stadium, Mumbai") that were not normalized for this
-project — the same mapping-table approach used for teams could be extended
+project. The same mapping-table approach used for teams could be extended
 to venues.
 
 ## Files
@@ -52,7 +52,7 @@ to venues.
 ## How to Run
 
 1. Download `matches.csv` and `deliveries.csv` from the Kaggle dataset linked above.
-2. Place them in the same folder as `00_data_cleaning.ipynb` and run it — this produces `matches_cleaned.csv` and `deliveries_cleaned.csv`.
+2. Place them in the same folder as `00_data_cleaning.ipynb` and run it. This produces `matches_cleaned.csv` and `deliveries_cleaned.csv`.
 3. Move those two cleaned CSVs into the same folder as the SQL scripts.
 4. `local_infile` must be enabled on **both** sides, not just the server:
    - Server: `SET GLOBAL local_infile = 1;`
@@ -62,19 +62,19 @@ to venues.
 
 ## Analysis Questions
 
-**Tier 1 — Basic (single table, aggregation)**
+**Tier 1 - Basic (single table, aggregation)**
 1. Matches won by each team
 2. Venues that hosted the most matches
 3. Matches won batting first vs. chasing
 4. Most Player of the Match awards
 
-**Tier 2 — Intermediate (joins between matches + deliveries)**
+**Tier 2 - Intermediate (joins between matches + deliveries)**
 5. Top 10 run scorers of all time
-6. Top 10 wicket takers of all time (run-outs excluded — not a bowler's wicket)
+6. Top 10 wicket takers of all time (run-outs excluded - not a bowler's wicket)
 7. Team with the highest total runs scored across all matches
 8. Average first-innings score per season
 
-**Tier 3 — Advanced (subqueries, CTEs, window functions)**
+**Tier 3 - Advanced (subqueries, CTEs, window functions)**
 9. Best strike rate, minimum 500 balls faced
 10. Teams ranked by win percentage, per season (`RANK() OVER PARTITION BY`)
 11. Each team's highest individual score by a player in a single match
@@ -87,7 +87,7 @@ to venues.
 - **Mumbai Indians** and **Chennai Super Kings** lead in total match wins, with
   144 and 138 respectively.
 - Matches are won more often by the team **chasing** (590) than batting first
-  (500) — consistent with IPL's general trend toward favoring the chase.
+  (500) - consistent with IPL's general trend toward favoring the chase.
 - **Eden Gardens** is the most-used venue across all seasons (77 matches).
 - **AB de Villiers** holds the most Player of the Match awards (25).
 
