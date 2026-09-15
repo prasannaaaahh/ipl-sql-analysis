@@ -70,11 +70,8 @@ to venues.
 **Tier 2 - Intermediate (joins between matches + deliveries)**
 
 5. Top 10 run scorers of all time
-
 6. Top 10 wicket takers of all time (run-outs excluded - not a bowler's wicket)
-
 7. Team with the highest total runs scored across all matches
-
 8. Average first-innings score per season
 
 
