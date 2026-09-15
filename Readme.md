@@ -68,18 +68,30 @@ to venues.
 4. Most Player of the Match awards
 
 **Tier 2 - Intermediate (joins between matches + deliveries)**
+
 5. Top 10 run scorers of all time
+
 6. Top 10 wicket takers of all time (run-outs excluded - not a bowler's wicket)
+
 7. Team with the highest total runs scored across all matches
+
 8. Average first-innings score per season
 
+
 **Tier 3 - Advanced (subqueries, CTEs, window functions)**
+
 9. Best strike rate, minimum 500 balls faced
+
 10. Teams ranked by win percentage, per season (`RANK() OVER PARTITION BY`)
+
 11. Each team's highest individual score by a player in a single match
+
 12. Best death-overs (16–20) economy rate, minimum 300 balls bowled
+
 13. Running total of runs for a team across a season (`SUM() OVER`)
+
 14. Head-to-head record between two teams
+
 
 ## Key Findings
 
